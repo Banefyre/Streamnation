@@ -14048,8 +14048,8 @@ body.pushed.scrolling.ui.dimmable {
   float: left;
   position: relative;
   top: 0px;
-  width: 316px;
-  min-height: 375px;
+  max-width: 316px;
+  max-height: 375px;
   margin: 0em 0.5em 2.5em;
   padding: 0em;
   background-color: #FFFFFF;
@@ -14064,6 +14064,7 @@ body.pushed.scrolling.ui.dimmable {
   transition: box-shadow 0.2s ease;
   padding: 0.5em;
 }
+
 .ui.items a.item,
 .ui.items .item a {
   cursor: pointer;

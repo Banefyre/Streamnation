@@ -12,26 +12,22 @@
     <b>My storage</b>
   <div class="menu">
 
-      <a class="item" href="#"><i class="folder outline icon"></i>My Files</a>
+      <a class="item" href="my_films.php"><i class="video icon"></i>My films</a>
 
-      <a class="item" href="#"><i class="video icon"></i>My films</a>
-
-      <a class="item" href="#"><i class="video icon"></i>My series</a>
+      <a class="item" href="my_series.php"><i class="video icon"></i>My series</a>
 
       <a class="item" href="#"><i class="photo icon"></i>My photos</a>
 
   </div>
 </div>
 <a class="item" href="#">
-  <i class="moon icon"></i>What for tonight ?
+  <i class="arrow box right icon"></i>What shall I watch ?
 </a>
 <div class="item">
   <b>Friends</b>
   <div class="menu">
 
       <a class="item" href="#"><i class="user icon"></i>View Friends</a>
-
-      <a class="item" href="#"><i class="folder outline icon"></i>My Friends Files</a>
 
       <a class="item" href="#"><i class="video icon"></i>My Friends Movies</a>
 
