@@ -37,6 +37,7 @@ foreach($lib['movies'] as $key => $movie) {// TO GET ALL INFO ABOUT EACH MOVIE
   }
 }
 
+
 foreach($last_watched as $movie)
 {// TO GET ALL INFO ABOUT EACH MOVIE
   $cast = $movie['cast'];
@@ -195,7 +196,6 @@ function sort_array_of_array(&$array, $subfield)
           <div class="name"><?php echo $m['object']['name']?></div>
           <div class="extra">
               <?php echo $m['object']['like_count'].' likes | rating: '.$m['object']['rating']; ?>
-              <?php echo 'date: '.$m['rating_date']; ?>
           </div>
         </div>
       </div>
