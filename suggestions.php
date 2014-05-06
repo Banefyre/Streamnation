@@ -6,17 +6,28 @@ if (!isset($_SESSION))
 $towatch = array();
 
 $rest_client = new RESTClient;
-$json = $rest_client->get('api/v1/movies?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
+$json = $rest_client->get('api/v1/movies?auth_token='.$_SESSION['auth_token']);
 $lib = json_decode($json, true);
-foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
-  $towatch[] = $movie;
-
-// $rest_client = new RESTClient;
-// $json = $rest_client->get('api/v1/shows?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
-// $lib = json_decode($json, true);
-// foreach($lib['shows'] as $key => $show) // TO GET ALL INFO ABOUT EACH MOVIE
-//   $towatch[] = $show;
-
+$last_watched = array();
+foreach($lib['movies'] as $key => $movie) {// TO GET ALL INFO ABOUT EACH MOVIE
+  $json2 = $rest_client->get('/api/v1/content/'.$movie['content_ids'][0].'?auth_token='.$_SESSION['auth_token']);
+  $contents = json_decode($json2, true);
+  if ($contents['content']['playback_available'] == true){
+    $towatch[] = array(
+      'object' => $movie,
+      'rating_actor' => 0,
+      'rating_genre' => 0,
+      'rating' => 0,
+      'rating_total' => 0);
+  }
+  if ($contents['content']['watched'] == true ){
+    $last_watched[] = $movie;
+    echo $movie['name'];
+  }
+}
+///
+$movies = array(); // FILL THIS WITH TOP 5
+///
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -91,29 +102,15 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
     <div class="ui items"> <!-- items-->
 
     <?php
-// foreach ($towatch as $key => $value) {
-//     echo "</br>";
-//     echo "$key => ";
-//     var_dump($value);
-//     echo "</br>";
-// }
-
-
-
-    foreach ($towatch as $m){
+    foreach ($movies as $m){
       foreach ($m['covers'] as $c){
         if ($c['type'] == 'native')
           $img = $c['uri'];
       }
       if (!isset($img))
         $img = $m['covers'][0]['uri'];
-
-      $rest_client2 = new RESTClient;
-      $json2 = $rest_client2->get('/api/v1/content/'.$m['content_ids'][0].'?auth_token='.$_SESSION['auth_token']);
-      $contents = json_decode($json2, true);
-      $dispo = $contents['content']['playback_available'];
     ?>
-      <div class="item <?php if (!$dispo){echo " borowed";} ?>">
+      <div class="item ">
         <div class="image">
           <img src= <?php echo "\"$img \""?> >
           <a class="like ui corner label"> <!-- ADD LIKE IF CLICKED -->
@@ -121,7 +118,7 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
           </a>
         </div>
         <div class="content">
-          <div class="name"><?php echo $m['name'] ?></div>
+          <div class="name"><?php echo $m['name'] ?></div>`
           <div class="extra">
               <?php echo $m['like_count'] ?> likes
           </div>
