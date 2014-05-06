@@ -64,7 +64,7 @@
         *
         * @return json
         */
-        private function exec($method, $uri, $data = null) {
+        private function exec($method, $uri, $data = null, $authToken = null) {
             /**
             * Error variables
             */
@@ -79,7 +79,9 @@
             /**
             * Additional headers
             */
-            $headers = ["X-API-Version: 1.1"];
+            $header = array('X-API-Version: 1.1');
+            if ($authToken != null)
+              $header[] = "X-Milestone-Auth-Token: ".$authToken];
 
             /**
             * Special treatment
