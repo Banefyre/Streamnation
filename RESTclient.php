@@ -81,7 +81,7 @@
             */
             $header = array('X-API-Version: 1.1');
             if ($authToken != null)
-              $header[] = "X-Milestone-Auth-Token: ".$authToken];
+              $header[] = "X-Milestone-Auth-Token: ".$authToken;
 
             /**
             * Special treatment
@@ -134,7 +134,7 @@
             /**
             * Basic options
             */
-            curl_setopt($handle, CURLOPT_HTTPHEADER, $headers);
+            curl_setopt($handle, CURLOPT_HTTPHEADER, $header);
             curl_setopt($handle, CURLOPT_RETURNTRANSFER, true);
 
             /**
