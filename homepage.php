@@ -12,7 +12,7 @@
   <br />
   <hr />
 
-  <a href="" class="what_should">
+  <a href="suggestions_film.php" class="what_should">
     <div id="what_should_2">
       <h1>Should I watch a film?</h1>
       <p>You have no idea for tonight ?<br />
