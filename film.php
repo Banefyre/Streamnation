@@ -18,6 +18,7 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
 <!DOCTYPE HTML>
 <html>
   <head>
+    <meta charset="UTF-8">
     <link href="css/semantic.min.css" rel="stylesheet" type="text/css"/>
     <link href="css/login.css" rel="stylesheet" type="text/css"/>
     <link href="css/header.css" rel="stylesheet" type="text/css"/>
@@ -86,8 +87,8 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
     </div>
     <div class="ui items"> <!-- items-->
 
-    <?php 
-    foreach ($movies as $m){ 
+    <?php
+    foreach ($movies as $m){
       foreach ($m['covers'] as $c){
         if ($c['type'] == 'native')
           $img = $c['uri'];
@@ -116,7 +117,7 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
         </div>
       </div>
     <?php } ?>
-    
+
     </div> <!-- end items -->
 
   </div> <!-- endcontent -->
