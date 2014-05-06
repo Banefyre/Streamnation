@@ -12,8 +12,7 @@ foreach ($contents['movies'] as $key => $string) {
     $test[] = $string;
 }
 
-$rest_client = new RESTClient;
-$json = $rest_client->get('api/v1/library/shared?auth_token='.$_SESSION['auth_token']);
+$json = $rest_client3->get('api/v1/library/shared?auth_token='.$_SESSION['auth_token']);
 $contents = json_decode($json, true);
 $movies = array();
 $files = array();
