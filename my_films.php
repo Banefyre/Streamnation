@@ -16,15 +16,7 @@ foreach ($contents['contents'] as $key => $value) {
 ?>
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <link href="css/semantic.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/login.css" rel="stylesheet" type="text/css"/>
-    <link href="css/header.css" rel="stylesheet" type="text/css"/>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascript/semantic.js"></script>
-	  <script src="javascript/login.js"></script>
-    <script src="javascript/logout.js"></script>
-  </head>
+  <?php include('header.php')?>
   <body>
     <img id="background" src="images/background-login.jpg">
 

@@ -37,6 +37,7 @@ foreach($lib['movies'] as $key => $movie) {// TO GET ALL INFO ABOUT EACH MOVIE
   }
 }
 
+
 foreach($last_watched as $movie)
 {// TO GET ALL INFO ABOUT EACH MOVIE
   $cast = $movie['cast'];
@@ -115,16 +116,7 @@ function sort_array_of_array(&$array, $subfield)
 ?>
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <link href="css/semantic.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/login.css" rel="stylesheet" type="text/css"/>
-    <link href="css/header.css" rel="stylesheet" type="text/css"/>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascript/semantic.js"></script>
-	  <script src="javascript/login.js"></script>
-    <script src="javascript/logout.js"></script>
-  </head>
+  <?php include('header.php')?>
   <body>
     <img id="background" src="images/background-login.jpg">
   <?PHP include('menu.php') ?>
@@ -195,7 +187,6 @@ function sort_array_of_array(&$array, $subfield)
           <div class="name"><?php echo $m['object']['name']?></div>
           <div class="extra">
               <?php echo $m['object']['like_count'].' likes | rating: '.$m['object']['rating']; ?>
-              <?php echo 'date: '.$m['rating_date']; ?>
           </div>
         </div>
       </div>
