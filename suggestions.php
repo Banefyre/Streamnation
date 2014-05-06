@@ -3,16 +3,19 @@ require_once('RESTClient.php');
 if (!isset($_SESSION))
   session_start();
 
+$towatch = array();
+
 $rest_client = new RESTClient;
 $json = $rest_client->get('api/v1/movies?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
 $lib = json_decode($json, true);
-
-$movies = array();
-
 foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
-  {
-    $movies[] = $movie;
-  }
+  $towatch[] = $movie;
+
+// $rest_client = new RESTClient;
+// $json = $rest_client->get('api/v1/shows?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
+// $lib = json_decode($json, true);
+// foreach($lib['shows'] as $key => $show) // TO GET ALL INFO ABOUT EACH MOVIE
+//   $towatch[] = $show;
 
 ?>
 <!DOCTYPE HTML>
@@ -88,7 +91,16 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
     <div class="ui items"> <!-- items-->
 
     <?php
-    foreach ($movies as $m){
+// foreach ($towatch as $key => $value) {
+//     echo "</br>";
+//     echo "$key => ";
+//     var_dump($value);
+//     echo "</br>";
+// }
+
+
+
+    foreach ($towatch as $m){
       foreach ($m['covers'] as $c){
         if ($c['type'] == 'native')
           $img = $c['uri'];
@@ -110,7 +122,6 @@ foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
         </div>
         <div class="content">
           <div class="name"><?php echo $m['name'] ?></div>
-          <p class="description"><?php echo $m['overview'] ?></p>
           <div class="extra">
               <?php echo $m['like_count'] ?> likes
           </div>
