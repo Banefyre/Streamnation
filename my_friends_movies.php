@@ -12,8 +12,7 @@ foreach ($contents['movies'] as $key => $string) {
     $test[] = $string;
 }
 
-$rest_client = new RESTClient;
-$json = $rest_client->get('api/v1/library/shared?auth_token='.$_SESSION['auth_token']);
+$json = $rest_client3->get('api/v1/library/shared?auth_token='.$_SESSION['auth_token']);
 $contents = json_decode($json, true);
 $movies = array();
 $files = array();
@@ -32,10 +31,7 @@ $contents2 = json_decode($json2, true);
 foreach ($contents2 as $key => $value) {
   if ($value['type'] == "VideoContent" && isset($value['media_type']) && $value['media_type'] == "movie")
     array_push($movies, $value);
-
-}
-//var_dump($contents2);
-   // var_dump($movie['content_ids']["0"]);
+  }
 }
 
 ?>
