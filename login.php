@@ -1,7 +1,8 @@
 <?php
 require_once('RESTClient.php');
+session_start();
 
-if (isset($_POST['login']) && isset($_POST['password'])){
+//if (isset($_POST['login']) && isset($_POST['password'])){
     $rest_client = new RESTClient;
 
     $data = [
@@ -16,6 +17,8 @@ if (isset($_POST['login']) && isset($_POST['password'])){
     $array = json_decode($json, true);
     var_dump($array);
 
-   // $_SESSION['auth_token'] = 
-}
+    $_SESSION['auth_token'] = $array['auth_token'];
+
+ 
+//}
 ?>

@@ -16,8 +16,8 @@
         *
         * @return json
         */
-        public function get($uri) {
-            return $this->exec('get', $uri);
+        public function get($uri, $authToken) {
+            return $this->exec('get', $uri, null, $authToken);
         }
 
         /**
@@ -81,7 +81,9 @@
             */
             $header = array('X-API-Version: 1.1');
             if ($authToken != null)
+            {
               $header[] = "X-Milestone-Auth-Token: ".$authToken;
+            }
 
             /**
             * Special treatment
