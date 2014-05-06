@@ -1,5 +1,5 @@
 <div class="ui large vertical inverted labeled icon sidebar menu active" id="menu">
-<a class="item" href="#">
+<a class="item" href="./">
   <i class="inverted circular green home icon"></i>
   <?PHP echo $_SESSION['auth_username']; ?>
 </a>
