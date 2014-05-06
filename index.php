@@ -13,6 +13,7 @@
     <script src="javascript/semantic.js"></script>
 	  <script src="javascript/login.js"></script>
     <script src="javascript/logout.js"></script>
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
     <img id="background" src="images/background-login.jpg">
@@ -21,6 +22,7 @@
     ?>
       <div id="login-form" class="main container">
         <div class="ui form segment">
+          <p>Use your <a href="http://www.streamnation.com">streamnation</a> login</p>
           <div class="field">
             <label>Username</label>
             <div class="ui left labeled icon input">
@@ -42,7 +44,7 @@
             </div>
           </div>
           <div class="ui error message">
-            <div class="header">We noticed some issues</div>
+            <div class="">Username or password incorrect</div>
           </div>
           <div class="ui blue submit button" id="login-button">Login</div>
         </div>

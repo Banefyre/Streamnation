@@ -20,6 +20,7 @@ require_once('RESTClient.php');
       $_SESSION['auth_email'] = $array['user']['email'];
       $_SESSION['auth_username'] = $array['user']['username'];
       $_SESSION['auth_token'] = $array['auth_token'];
+      $_SESSION['auth_id'] = $array['user']['id'];
     }
     echo $json;
 
