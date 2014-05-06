@@ -22,6 +22,7 @@ function login()
         {
           console.log("error");
           $('.input').addClass("error");
+          $('.ui.error.message').show();
         }
         else if (res.auth_token)
         {

@@ -4,9 +4,6 @@
   <?PHP echo $_SESSION['auth_username']; ?>
 </a>
 
-<a class="item" href="#">
-  <i class="inverted circular blue awesome upload cloud icon"></i>
-</a>
 
 <div class="item">
     <b>My storage</b>

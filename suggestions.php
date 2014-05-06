@@ -8,8 +8,10 @@ $towatch = array();
 $rest_client = new RESTClient;
 $json = $rest_client->get('api/v1/movies?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
 $lib = json_decode($json, true);
-foreach($lib['movies'] as $key => $movie) // TO GET ALL INFO ABOUT EACH MOVIE
+foreach($lib['movies'] as $key => $movie)
+{// TO GET ALL INFO ABOUT EACH MOVIE
   $towatch[] = $movie;
+}
 
 // $rest_client = new RESTClient;
 // $json = $rest_client->get('api/v1/shows?auth_token='.$_SESSION['auth_token'].'&sortby=title', $_SESSION['auth_token']);
