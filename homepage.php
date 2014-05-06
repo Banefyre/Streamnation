@@ -16,8 +16,8 @@
     <div id="what_should_2">
       <h1>Pick My Film !</h1>
       <p>Finding it hard to choose?<br />
-      Need something to fill the gap between now and the next Game of Thrones?<br />
-      Or just looking for a new idea?<br /><br />
+      Want to know which of your films are top rated?<br />
+      Or just looking for a new ideas?<br /><br />
       Let us help you choose...</p>
     </div>
   </a>

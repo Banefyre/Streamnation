@@ -1,6 +1,6 @@
 <head>
   <meta charset="UTF-8">
-  <link href="css/semantic.css" rel="stylesheet" type="text/css"/>
+  <link href="css/semantic.min.css" rel="stylesheet" type="text/css"/>
   <link href="css/login.css" rel="stylesheet" type="text/css"/>
   <link href="css/header.css" rel="stylesheet" type="text/css"/>
   <link href="css/homepage.css" rel="stylesheet" type="text/css"/>

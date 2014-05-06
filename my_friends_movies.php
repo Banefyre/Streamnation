@@ -25,24 +25,21 @@ $files = array();
 
 foreach ($test as $key => $movie) {
 
-$rest_client2 = new RESTClient;
-$json2 = $rest_client2->get('api/v1/content/'.$movie['content_ids']["0"].'?auth_token='.$_SESSION['auth_token']);
-$contents2 = json_decode($json2, true);
+  $rest_client2 = new RESTClient;
+  $json2 = $rest_client2->get('api/v1/content/'.$movie['content_ids']["0"].'?auth_token='.$_SESSION['auth_token']);
+  $contents2 = json_decode($json2, true);
 
-foreach ($contents2 as $key => $value) {
-  if ($value['type'] == "VideoContent" && isset($value['media_type']) && $value['media_type'] == "movie")
-    array_push($movies, $value);
-
-}
-//var_dump($contents2);
-   // var_dump($movie['content_ids']["0"]);
+  foreach ($contents2 as $key => $value) {
+    if ($value['type'] == "VideoContent" && isset($value['media_type']) && $value['media_type'] == "movie")
+      array_push($movies, $value);
+  }
 }
 
 ?>
 <!DOCTYPE HTML>
 <html>
 
-  <?php include('header.php')?>
+  <?php include('header.php');?>
   <body>
     <img id="background" src="images/background-login.jpg">
 
@@ -89,7 +86,6 @@ foreach ($contents2 as $key => $value) {
         </div>
         <div class="content">
           <div class="name"><?php echo $m['title'] ?></div>
-          <p class="description"><?php echo $m['media_metadata']['movie']['overview'] ?></p>
           <div class="extra">
               <?php echo $m['like_count'] ?> likes
           </div>
