@@ -49,93 +49,10 @@
   <?PHP }else{ include('menu.php');?>
 
   <div id="content"> <!-- content -->
+
   <div id= "main-content">
-    <div class="ui steps">
-      <div class="ui step">
-        Files
-      </div>
-      <div class="ui step">
-        Series
-      </div>
-      <div class="ui active step">
-        Games of Throne
-      </div>
-    </div>
-    <div class="ui tertiary form segment">
-      <div class="field">
-        <div class="ui left labeled icon input">
-          <i class="search icon"></i>
-          <input type="text" placeholder="Search">
-        </div>
-      </div>
-
-    </div>
-    <div class="ui items"> <!-- items-->
-      <div class="item">
-        <div class="image">
-          <img src="/images/demo/highres.jpg">
-          <a class="like ui corner label">
-            <i class="like icon"></i>
-          </a>
-        </div>
-        <div class="content">
-          <div class="name">Title</div>
-          <p class="description">Description</p>
-          <div class="extra">
-              XX likes
-          </div>
-        </div>
-      </div>
-
-        <div class="item">
-          <div class="image">
-            <img src="/images/demo/highres.jpg">
-            <a class="like ui corner label">
-              <i class="like icon"></i>
-            </a>
-          </div>
-          <div class="content">
-            <div class="name">Title</div>
-            <p class="description">Description</p>
-            <div class="extra">
-                XX likes
-            </div>
-          </div>
-        </div>
-
-          <div class="item">
-            <div class="image">
-              <img src="/images/demo/highres.jpg">
-              <a class="like ui corner label">
-                <i class="like icon"></i>
-              </a>
-            </div>
-            <div class="content">
-              <div class="name">Title</div>
-              <p class="description">Description</p>
-              <div class="extra">
-                  XX likes
-              </div>
-            </div>
-          </div>
-
-            <div class="item">
-              <div class="image">
-                <img src="/images/demo/highres.jpg">
-                <a class="like ui corner label">
-                  <i class="like icon"></i>
-                </a>
-              </div>
-              <div class="content">
-                <div class="name">Title</div>
-                <p class="description">Description</p>
-                <div class="extra">
-                    XX likes
-                </div>
-              </div>
-            </div>
-    </div> <!-- end items -->
-
+    <?PHP include('homepage.php')?>
+  </div> <!-- end main content-->
   </div> <!-- endcontent -->
   <?PHP } ?>
   </body>
