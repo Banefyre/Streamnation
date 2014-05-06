@@ -16,7 +16,7 @@
         *
         * @return json
         */
-        public function get($uri, $authToken) {
+        public function get($uri) {
             return $this->exec('get', $uri, null, $authToken);
         }
 
@@ -51,8 +51,8 @@
         *
         * @return json
         */
-        public function delete($uri) {
-            return $this->exec('delete', $uri);
+        public function delete($uri, $data) {
+            return $this->exec('delete', $uri, $data);
         }
 
         /**
@@ -64,7 +64,7 @@
         *
         * @return json
         */
-        private function exec($method, $uri, $data = null, $authToken = null) {
+        private function exec($method, $uri, $data = null) {
             /**
             * Error variables
             */
@@ -80,7 +80,7 @@
             * Additional headers
             */
             $header = array('X-API-Version: 1.1');
-            if ($authToken != null)
+            if (isset($_SESSION['auth_token']))
             {
               $header[] = "X-Milestone-Auth-Token: ".$authToken;
             }
@@ -101,6 +101,17 @@
                     } else {
                         $error = true;
                         $error_msg = 'No data provided for that POST request';
+                    }
+                break;
+                case 'delet':
+                    /**
+                    * Adding data
+                    */
+                    if($data) {
+                        /**
+                        * POST option
+                        */
+                        curl_setopt($handle, CURLOPT_POSTFIELDS, $data);
                     }
                 break;
                 case 'put':

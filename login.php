@@ -1,6 +1,6 @@
 <?php
-require_once('RESTClient.php');
 session_start();
+require_once('RESTClient.php');
 
 //if (isset($_POST['login']) && isset($_POST['password'])){
     $rest_client = new RESTClient;
@@ -15,10 +15,13 @@ session_start();
     */
     $json = $rest_client->post('api/v1/auth', $data);
     $array = json_decode($json, true);
-    var_dump($array);
+    if (array_key_exists('auth_token', $array))
+    {
+      $_SESSION['auth_email'] = $array['user']['email'];
+      $_SESSION['auth_username'] = $array['user']['username'];
+      $_SESSION['auth_token'] = $array['auth_token'];
+    }
+    echo $json;
 
-    $_SESSION['auth_token'] = $array['auth_token'];
-
- 
 //}
 ?>
