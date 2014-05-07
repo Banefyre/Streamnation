@@ -2,7 +2,10 @@
 <?php
 require_once('RESTClient.php');
 
-function get_lists($token){
+function get_lists($token)
+{
+	$towatch = array();
+	$last_watched = array();
 	$rest_client = new RESTClient;
 	$json = $rest_client->get('api/v1/movies?auth_token='.$token);
 	$lib = json_decode($json, true);
@@ -38,3 +41,5 @@ function get_lists($token){
 	$res['last_watched'] = $last_watched;
 	return $res;
 }
+
+?>
