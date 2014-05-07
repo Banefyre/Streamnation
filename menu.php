@@ -26,7 +26,7 @@
 
       <a class="item" href="my_friends_movies.php"><i class="video icon"></i>My Friends Movies</a>
 
-      <a class="item" href="#"><i class="video icon"></i>My Friends Series</a>
+      <a class="item" href="my_friends_series.php"><i class="video icon"></i>My Friends Series</a>
 
   </div>
 </div>

@@ -32,7 +32,7 @@ foreach ($contents2 as $key => $value) {
 ?>
 <!DOCTYPE HTML>
 <html>
-  <?php include('header.php')?>
+  <!--<?php include('header.php')?> -->
   <body>
     <img id="background" src="images/background-login.jpg">
 
