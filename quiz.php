@@ -6,16 +6,7 @@ if (!isset($_SESSION))
 ?>
 <!DOCTYPE HTML>
 <html>
-  <head>
-    <link href="css/semantic.css" rel="stylesheet" type="text/css"/>
-    <link href="css/login.css" rel="stylesheet" type="text/css"/>
-    <link href="css/header.css" rel="stylesheet" type="text/css"/>
-    <link href="css/quiz.css" rel="stylesheet" type="text/css"/>
-    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascript/semantic.js"></script>
-    <script src="javascript/login.js"></script>
-    <script src="javascript/logout.js"></script>
-  </head>
+  <?php include('header.php');?>
   <body>
     <img id="background" src="images/background-login.jpg">
     <?PHP if (!isset($_SESSION['auth_token']))
@@ -48,25 +39,82 @@ if (!isset($_SESSION))
           </div>
           <div class="ui blue submit button" id="login-button">Login</div>
         </div>
-      <div>
-    </div>
-  <?PHP }else{ include('menu.php');?>
-
-  <div id="content"> <!-- content -->
-    <div id="quiz"> 
-      <div id ="question">
-      A QUESTION.
-      </div>
-      <div id ="answers">
-      <div class="three fluid ui buttons">
-     <div class="ui button">One</div>
-     <div class="ui button">Two</div>
-     <div class="ui button">Three</div>
-</div>
-      </div>
-    </div>
-
-  </div> <!-- endcontent -->
-  <?PHP } ?>
+      <div> </div>
+    <?PHP }else{ include('menu.php');?>
+      <div id="content"> <!-- content -->
+        <div id="quiz"> 
+          <div id ="question1">
+            A QUESTION ABOUT ACTORS
+          </div>
+          <div id ="answers1">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question2">
+            A QUESTION ABOUT RATINGS
+          </div>
+          <div id ="answers2">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question3">
+            A QUESTION ABOUT GENRE
+          </div>
+          <div id ="answers3">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question4">
+            A QUESTION ABOUT DATE
+          </div>
+          <div id ="answers4">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question5">
+            A QUESTION ABOUT NOTHING
+          </div>
+          <div id ="answers5">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question6">
+            A QUESTION ABOUT SANDWICHES
+          </div>
+          <div id ="answers6">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+          <div id ="question7">
+            A QUESTION ABOUT SANDWICHES
+          </div>
+          <div id ="answers7">
+            <div class="three fluid ui buttons">
+              <div class="ui button">One</div>
+              <div class="ui button">Two</div>
+              <div class="ui button">Three</div>
+            </div>
+          </div>
+        </div>
+      </div> <!-- endcontent -->
+    <?PHP } ?>
   </body>
 </html>

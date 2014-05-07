@@ -22,11 +22,11 @@
   <b>Friends</b>
   <div class="menu">
 
-      <a class="item" href="#"><i class="user icon"></i>View Friends</a>
+      <a class="item" href="#"><i class="user icon"></i>View friends</a>
 
-      <a class="item" href="my_friends_movies.php"><i class="video icon"></i>My Friends Movies</a>
+      <a class="item" href="my_friends_movies.php"><i class="video icon"></i>My friends movies</a>
 
-      <a class="item" href="#"><i class="video icon"></i>My Friends Series</a>
+      <a class="item" href="my_friends_series.php"><i class="video icon"></i>My friends series</a>
 
   </div>
 </div>
@@ -38,7 +38,7 @@
 <div class="ui small modal">
   <i class="close icon"></i>
   <div class="header">
-    Lougout
+    Logout
   </div>
   <div class="content">
     <p>Are you sure you want to logout ?</p>

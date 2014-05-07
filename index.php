@@ -3,7 +3,7 @@
 ?>
 <!DOCTYPE HTML>
 <html>
-  <?php include('header.php')?>
+  <?php include('header.php');?>
   <body>
     <img id="background" src="images/background-login.jpg">
     <?PHP if (!isset($_SESSION['auth_token']))
@@ -44,7 +44,7 @@
   <div id="content"> <!-- content -->
 
   <div id= "main-content">
-    <?PHP include('homepage.php')?>
+    <?PHP include('homepage.php');?>
   </div> <!-- end main content-->
   </div> <!-- endcontent -->
   <?PHP } ?>

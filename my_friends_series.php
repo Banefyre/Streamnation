@@ -9,8 +9,17 @@ $contents2 = json_decode($json, true);
 $movies = array();
 $test = array();
 foreach ($contents2['shows'] as $key => $string) {
-  if ($string['seasons']['0']['episodes']['0']['contents']["0"]['user']['id'] != $_SESSION['auth_id'])
-    $test[] = $string;
+  // echo "</br>";
+  // echo "$key => ";
+  // var_dump($string);
+  // echo "</br>";
+  foreach ($string['seasons'] as $ke => $season){
+    foreach ($season['episodes'] as $k => $episode){
+      if ($episode['contents']["0"]['user']['id'] != $_SESSION['auth_id']){
+        $test[] = $episode['content_ids']['0'];
+      }
+    }
+  }
 }
 
 $json = $rest_client->get('api/v1/library/shared?auth_token='.$_SESSION['auth_token']);
@@ -18,21 +27,21 @@ $contents = json_decode($json, true);
 $movies = array();
 $files = array();
 
-foreach ($test as $key => $show) {
+foreach ($test as $key => $id) {
 
-$json2 = $rest_client->get('api/v1/content/'.$show['seasons']['0']['episodes']['0']['content_ids']['0'].'?auth_token='.$_SESSION['auth_token']);
-$contents2 = json_decode($json2, true);
+  $json2 = $rest_client->get('api/v1/content/'.$id.'?auth_token='.$_SESSION['auth_token']);
+  $contents2 = json_decode($json2, true);
 
-foreach ($contents2 as $key => $value) {
-  if ($value['type'] == "VideoContent" && isset($value['media_type']) && $value['media_type'] == "episode")
-    array_push($movies, $value);
-  }
+  foreach ($contents2 as $key => $value) {
+    if ($value['type'] == "VideoContent" && isset($value['media_type']) && $value['media_type'] == "episode")
+      array_push($movies, $value);
+    }
 }
 
 ?>
 <!DOCTYPE HTML>
 <html>
-  <?php include('header.php')?>
+  <?php include('header.php');?>
   <body>
     <img id="background" src="images/background-login.jpg">
 
@@ -78,7 +87,6 @@ foreach ($contents2 as $key => $value) {
         </div>
         <div class="content">
           <div class="name"><?php echo $m['title'] ?></div>
-          <p class="description"><?php echo $m['media_metadata']['show']['overview'] ?></p>
           <div class="extra">
               <?php echo $m['like_count'] ?> likes
           </div>
