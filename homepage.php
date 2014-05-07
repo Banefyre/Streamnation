@@ -17,7 +17,7 @@
   <a href="suggestions_film.php" class="what_should">
     <div id="what_should_2">
       <h1>Pick My Film !</h1>
-      <p>Finding it hard to choose?<br />
+      <p>Don't know what to watch?<br />
       Want to know which of your films are top rated?<br />
       Or just looking for a new ideas?<br /><br />
       Let us help you choose...</p>
@@ -27,7 +27,7 @@
   <br />
   <hr />
 
-  <a href="" class="what_should">
+  <a href="suggestions_series.php" class="what_should">
     <div id="what_should_3">
       <h1>Pick My Series !</h1>
       <p>Not got any ideas for tonight ?<br />
@@ -40,6 +40,6 @@
 </div>
 
   <div id="loader" style="widht:100%;height:100%;margin-left:auto;margin-right:auto;display:none;">
-    <div class="ui text">Picking your Films</div><br />
+    <div class="ui text">Calculating suggestions</div><br />
     <i class="huge loading icon"></i>
   <div>
