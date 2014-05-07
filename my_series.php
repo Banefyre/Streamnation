@@ -16,7 +16,7 @@ foreach ($contents['contents'] as $key => $value) {
 ?>
 <!DOCTYPE HTML>
 <html>
-  <?php include('header.php')?>
+  <?php include('header.php');?>
   <body>
     <img id="background" src="images/background-login.jpg">
 
@@ -62,7 +62,6 @@ foreach ($contents['contents'] as $key => $value) {
         </div>
         <div class="content">
           <div class="name"><?php echo $m['title'] ?></div>
-          <p class="description"><?php echo $m['media_metadata']['show']['overview'] ?></p>
           <div class="extra">
               <?php echo $m['like_count'] ?> likes
           </div>
