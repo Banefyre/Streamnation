@@ -13,8 +13,6 @@
 
       <a class="item" href="my_series.php"><i class="video icon"></i>My series</a>
 
-      <a class="item" href="#"><i class="photo icon"></i>My photos</a>
-
   </div>
 </div>
 <a class="item" href="suggestions_film.php">
@@ -29,8 +27,6 @@
       <a class="item" href="my_friends_movies.php"><i class="video icon"></i>My Friends Movies</a>
 
       <a class="item" href="#"><i class="video icon"></i>My Friends Series</a>
-
-      <a class="item" href="#"><i class="photo icon"></i>My Friends Photos</a>
 
   </div>
 </div>

@@ -1,4 +1,6 @@
 
+  <div id="choices">
+
   <a href="" class="what_should">
     <div id="what_should_1">
       <h1>What should I watch ?</h1>
@@ -34,3 +36,10 @@
       Let Us chose for you.</p>
     </div>
   </a>
+
+</div>
+
+  <div id="loader" style="widht:100%;height:100%;margin-left:auto;margin-right:auto;display:none;">
+    <div class="ui text">Picking your Films</div><br />
+    <i class="huge loading icon"></i>
+  <div>
