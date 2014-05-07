@@ -15,7 +15,7 @@
 
   </div>
 </div>
-<a class="item" href="suggestions_film.php">
+<a class="item" href="quiz.php">
   <i class="arrow box right icon"></i>What shall I watch ?
 </a>
 <div class="item">

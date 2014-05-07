@@ -1,7 +1,7 @@
 
   <div id="choices">
 
-  <a href="" class="what_should">
+  <a href="quiz.php" class="what_should">
     <div id="what_should_1">
       <h1>What should I watch right now?</h1>
       <p>Its movie night and you are fresh out of ideas.<br />
